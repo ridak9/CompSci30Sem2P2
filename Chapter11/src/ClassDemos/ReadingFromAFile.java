@@ -13,7 +13,9 @@ public class ReadingFromAFile
 	    try 
 	    {
 	      BufferedReader reader = new BufferedReader(new FileReader(path));
+	      
 	      System.out.println(reader.readLine());
+	      
 	      reader.close();
 	    } 
 	    catch (IOException e) 
