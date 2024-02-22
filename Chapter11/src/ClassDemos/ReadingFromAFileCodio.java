@@ -2,12 +2,12 @@ package ClassDemos;
 
 import java.io.*;
 
-public class ReadingFromAFile 
+public class ReadingFromAFileCodio 
 {
 
 	public static void main(String[] args) 
 	{
-	    
+	  		
 	    String path = "../Chapter11/src/ClassDemos/practice2.txt";
 	    
 	    try 

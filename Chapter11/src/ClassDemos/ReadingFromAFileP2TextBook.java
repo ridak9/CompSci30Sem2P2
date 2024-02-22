@@ -1,20 +1,29 @@
-
 package ClassDemos;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class ReadingFromAFileP2 {
+public class ReadingFromAFileP2TextBook 
+{
 
-	
 	public static void main(String[] args) 
 	{
-	   
-	    String path = "../Chapter11/src/ClassDemos/practice3.txt";
+		File textFile = new File("../Chapter11/src/ClassDemos/practice3.txt");
+		
+		FileReader in;
+		
+		BufferedReader reader;
+
+		String currentLine;
+	    
 	    try 
 	    {
-	      BufferedReader reader = new BufferedReader(new FileReader(path));
+	    	in = new FileReader(textFile);	
+		    reader = new BufferedReader(in);
 	      
-	      String currentLine = reader.readLine();
+		    currentLine = reader.readLine();
 	      
 	      while(currentLine != null) 
 	      {
@@ -24,6 +33,7 @@ public class ReadingFromAFileP2 {
 	      }
 	      
 	      reader.close();
+	      in.close();
 	      
 	    } 
 	    catch (IOException e) 
@@ -34,8 +44,7 @@ public class ReadingFromAFileP2 {
 	    {
 	      System.out.println("Finished reading a file.");
 	    }
-	
-		
+
 	}
 
 }
