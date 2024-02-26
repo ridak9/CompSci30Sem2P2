@@ -110,13 +110,20 @@ public class ClassDemo {
 		disp.setBounds(28, 269, 474, 94);
 		panel.add(disp);
 		
+		JComboBox school = new JComboBox();
+		school.setForeground(Color.RED);
+		school.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		school.setModel(new DefaultComboBoxModel(new String[] {"Select School:", "Crescent", "Pearson", "Western"}));
+		school.setBounds(198, 120, 169, 39);
+		panel.add(school);
+		
 		JButton btnNewButton = new JButton("SUBMIT");
 		btnNewButton.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
 				String grade = " ";
-				String school = " ";
+				String sch = " ";
 				
 				String firstN = Fn.getText();
 				String lastN = Ln.getText();
@@ -134,9 +141,28 @@ public class ClassDemo {
 					grade = "12";
 				}
 				
+				if(school.getSelectedItem().equals("Crescent"))
+				{
+					sch = "Crescent";
+				}
+				if(school.getSelectedItem().equals("Pearson"))
+				{
+					sch = "Pearson";
+				}
+				else
+				{
+					sch = "Western";
+				}
+				
+				
+				
+				
+				
+				
 				disp.setText(firstN + " " +
-							   lastN + " is in grade: "+
-								 grade
+							   	lastN + " is in grade: "+
+								 grade + " "+
+								 "and goes to "+ sch
 								);
 				
 				
@@ -147,6 +173,8 @@ public class ClassDemo {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.setBounds(409, 34, 123, 200);
 		panel.add(btnNewButton);
+		
+		
 		
 		
 	}
