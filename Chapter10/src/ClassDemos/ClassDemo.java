@@ -12,6 +12,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -49,15 +50,20 @@ public class ClassDemo {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() 
+	{
+		ImageIcon cres = new ImageIcon("../Chapter10/src/ClassDemos/chhs.png");
+		ImageIcon pears = new ImageIcon("../Chapter10/src/ClassDemos/pearson.png");
+		ImageIcon west = new ImageIcon("../Chapter10/src/ClassDemos/western.png");
+		
 		
 		frame = new JFrame();
-		frame.setBounds(100, 100, 568, 439);
+		frame.setBounds(100, 100, 614, 476);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 554, 373);
+		panel.setBounds(0, 0, 588, 414);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -107,7 +113,7 @@ public class ClassDemo {
 		
 		JLabel disp = new JLabel("");
 		disp.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		disp.setBounds(28, 269, 474, 94);
+		disp.setBounds(25, 196, 374, 68);
 		panel.add(disp);
 		
 		JComboBox school = new JComboBox();
@@ -116,6 +122,10 @@ public class ClassDemo {
 		school.setModel(new DefaultComboBoxModel(new String[] {"Select School:", "Crescent", "Pearson", "Western"}));
 		school.setBounds(198, 120, 169, 39);
 		panel.add(school);
+		
+		JLabel imgd = new JLabel("");
+		imgd.setBounds(389, 245, 189, 158);
+		panel.add(imgd);
 		
 		JButton btnNewButton = new JButton("SUBMIT");
 		btnNewButton.addActionListener(new ActionListener() 
@@ -132,7 +142,7 @@ public class ClassDemo {
 				{
 					grade = "10";
 				}
-				if(comboBox.getSelectedItem().equals("11"))
+				else if(comboBox.getSelectedItem().equals("11"))
 				{
 					grade = "11";
 				}
@@ -144,14 +154,18 @@ public class ClassDemo {
 				if(school.getSelectedItem().equals("Crescent"))
 				{
 					sch = "Crescent";
+					imgd.setIcon(cres);
+					
 				}
-				if(school.getSelectedItem().equals("Pearson"))
+				else if(school.getSelectedItem().equals("Pearson"))
 				{
 					sch = "Pearson";
+					imgd.setIcon(pears);
 				}
 				else
 				{
 					sch = "Western";
+					imgd.setIcon(west);
 				}
 				
 				
@@ -173,6 +187,8 @@ public class ClassDemo {
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnNewButton.setBounds(409, 34, 123, 200);
 		panel.add(btnNewButton);
+		
+		
 		
 		
 		
