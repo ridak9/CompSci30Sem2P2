@@ -1,9 +1,12 @@
 package Stack2;
 
-public class Stack2Demo {
+public class Stack2Demo 
+{
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) 
+	{
+
+
 
 	}
 
